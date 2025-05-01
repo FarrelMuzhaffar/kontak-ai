@@ -1,0 +1,18 @@
+# Abaikan environment & credential
+.env
+
+# Cache & pyc
+__pycache__/
+*.py[cod]
+
+# File editor
+.vscode/
+.idea/
+
+# File sistem
+.DS_Store
+Thumbs.db
+
+# Log dan database
+*.log
+*.sqlite3

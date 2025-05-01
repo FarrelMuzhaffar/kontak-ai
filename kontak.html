@@ -1,0 +1,38 @@
+<form id="contactForm" method="POST">
+    <label>Nama:</label><br>
+    <input type="text" name="nama" required><br>
+  
+    <label>Email:</label><br>
+    <input type="email" name="email" required><br>
+  
+    <label>Pekerjaan:</label><br>
+    <input type="text" name="pekerjaan"><br>
+  
+    <label>Isi Pesan:</label><br>
+    <textarea name="pesan" required></textarea><br>
+  
+    <button type="submit">Kirim Pesan</button>
+  </form>
+  
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", async function(e) {
+      e.preventDefault();
+  
+      const formData = {
+        nama: this.nama.value,
+        email: this.email.value,
+        pekerjaan: this.pekerjaan.value,
+        pesan: this.pesan.value
+      };
+  
+      const response = await fetch("http://localhost:5000/kirim-pesan", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData)
+      });
+  
+      const result = await response.json();
+      alert(result.message || result.error);
+    });
+  </script>
+  
