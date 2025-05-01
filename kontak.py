@@ -51,3 +51,5 @@ def kirim_pesan():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+CORS(app, resources={r"/*": {"origins": "https://solusiai.free.nf"}})
