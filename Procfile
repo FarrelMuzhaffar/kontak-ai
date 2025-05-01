@@ -1,1 +1,1 @@
-web: python kontak.py
+python kontak.py
