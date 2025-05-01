@@ -13,6 +13,10 @@ EMAIL_SENDER = os.getenv("EMAIL_SENDER")
 EMAIL_PASSWORD = os.getenv("EMAIL_PASSWORD")
 EMAIL_RECEIVER = os.getenv("EMAIL_RECEIVER")  # Boleh sama dengan sender
 
+@app.route("/", methods=["GET"])
+def home():
+    return "Aplikasi Flask sudah berjalan di Railway!"
+
 @app.route("/kirim-pesan", methods=["POST"])
 def kirim_pesan():
     data = request.get_json()
